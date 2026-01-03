@@ -19,6 +19,10 @@
       "type": "integer",
       "required": true
     },
+    "unitPrice": {
+      "type": "decimal",
+      "required": true
+    },
     "amount": {
       "type": "decimal",
       "required": true
