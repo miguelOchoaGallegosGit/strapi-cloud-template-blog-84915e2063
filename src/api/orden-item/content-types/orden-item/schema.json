@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orden_items",
+  "info": {
+    "singularName": "orden-item",
+    "pluralName": "orden-items",
+    "displayName": "ordenItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "advance": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}

@@ -56,6 +56,11 @@
     "totalBalance": {
       "type": "decimal",
       "required": true
+    },
+    "orden_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::orden-item.orden-item"
     }
   }
 }

@@ -997,6 +997,37 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrdenItemOrdenItem extends Struct.CollectionTypeSchema {
+  collectionName: 'orden_items';
+  info: {
+    displayName: 'ordenItem';
+    pluralName: 'orden-items';
+    singularName: 'orden-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    advance: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0>;
+    amount: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+    Schema.Attribute.Private;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::orden-item.orden-item'
+    > &
+    Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    quantity: Schema.Attribute.Integer & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+    Schema.Attribute.Private;
+  };
+}
+
 export interface AdminTransferTokenPermission
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_transfer_token_permissions';
@@ -1059,6 +1090,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::orden.orden': ApiOrdenOrden;
+      'api::orden-item.orden-item': ApiOrdenItemOrdenItem;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
