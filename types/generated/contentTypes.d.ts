@@ -980,6 +980,10 @@ export interface ApiOrdenOrden extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::orden.orden'> &
     Schema.Attribute.Private;
+    orden_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::orden-item.orden-item'
+    >;
     orderNumber: Schema.Attribute.String &
     Schema.Attribute.Required &
     Schema.Attribute.Unique;
@@ -1020,6 +1024,7 @@ export interface ApiOrdenItemOrdenItem extends Struct.CollectionTypeSchema {
       'api::orden-item.orden-item'
     > &
     Schema.Attribute.Private;
+    orden: Schema.Attribute.Relation<'manyToOne', 'api::orden.orden'>;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

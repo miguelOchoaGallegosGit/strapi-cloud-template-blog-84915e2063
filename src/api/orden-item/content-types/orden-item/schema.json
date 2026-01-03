@@ -26,6 +26,12 @@
     "advance": {
       "type": "decimal",
       "default": 0
+    },
+    "orden": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::orden.orden",
+      "inversedBy": "orden_items"
     }
   }
 }

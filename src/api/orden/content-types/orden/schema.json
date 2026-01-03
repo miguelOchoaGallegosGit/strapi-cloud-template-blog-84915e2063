@@ -60,7 +60,8 @@
     "orden_items": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::orden-item.orden-item"
+      "target": "api::orden-item.orden-item",
+      "mappedBy": "orden"
     }
   }
 }
