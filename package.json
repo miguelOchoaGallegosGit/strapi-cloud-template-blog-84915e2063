@@ -2,7 +2,7 @@
   "name": "my-app-name",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "Backend dashbaord sarim",
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",

@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ordens",
+  "info": {
+    "singularName": "orden",
+    "pluralName": "ordens",
+    "displayName": "orden"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "customerName": {
+      "type": "string",
+      "required": true
+    },
+    "deliveryDate": {
+      "type": "date",
+      "required": true
+    },
+    "statusOrden": {
+      "type": "enumeration",
+      "default": "Recibido",
+      "enum": [
+        "Recibido",
+        "En Proceso",
+        "Cerrado"
+      ]
+    },
+    "isDelivered": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPaid": {
+      "type": "boolean",
+      "default": false
+    },
+    "totalAmount": {
+      "type": "decimal",
+      "required": true
+    },
+    "totalAdvance": {
+      "type": "decimal",
+      "required": true
+    },
+    "totalBalance": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}
